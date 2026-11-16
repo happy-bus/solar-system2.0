@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b18">
+  <meta name="description" content="可互動的太陽系行星軌道模擬器。">
+  <title>太陽系 · 行星軌道模擬器</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="space-glow" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="太陽系模擬器首頁">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>ORBIT<span class="brand-light">／太陽系</span></span>
+      </a>
+      <div class="live-indicator"><span class="live-dot"></span> 即時軌道模擬</div>
+    </header>
+
+    <section class="intro" id="top">
+      <p class="eyebrow">SOLAR SYSTEM · 太陽系探索</p>
+      <h1>我們的<span>宇宙鄰居</span></h1>
+      <p class="subtitle">沿著軌道，認識太陽與八大行星。</p>
+    </section>
+
+    <section class="simulator" aria-label="太陽系互動模擬器">
+      <div class="scene-wrap">
+        <div class="scene" id="scene" aria-label="太陽系行星軌道圖">
+          <div class="stars" id="stars" aria-hidden="true"></div>
+          <div class="sun-halo" aria-hidden="true"></div>
+          <div class="sun" aria-label="太陽"><span>太陽</span></div>
+          <div class="orbit orbit-0" aria-hidden="true"></div>
+          <div class="orbit orbit-1" aria-hidden="true"></div>
+          <div class="orbit orbit-2" aria-hidden="true"></div>
+          <div class="orbit orbit-3" aria-hidden="true"></div>
+          <div class="orbit orbit-4" aria-hidden="true"></div>
+          <div class="orbit orbit-5" aria-hidden="true"></div>
+          <div class="orbit orbit-6" aria-hidden="true"></div>
+          <div class="orbit orbit-7" aria-hidden="true"></div>
+          <div id="planet-layer" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="panel-heading">
+          <div><p class="eyebrow">PLANET GUIDE</p><h2>行星導覽</h2></div>
+          <span class="planet-count">01 — 08</span>
+        </div>
+        <p class="panel-hint">選擇一顆行星，看看它的軌道特徵。</p>
+        <div class="planet-list" id="planet-list"></div>
+        <div class="planet-detail" id="planet-detail" aria-live="polite">
+          <span class="detail-kicker">目前選擇</span>
+          <div class="detail-title"><span class="detail-dot" id="detail-dot"></span><h3 id="detail-name">地球</h3></div>
+          <p id="detail-description">我們熟悉的藍色家園，位於太陽系的宜居地帶。</p>
+          <div class="detail-meta"><span>距離太陽</span><strong id="detail-distance">1.00 AU</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="control-bar">
+      <div class="transport-controls">
+        <button class="control-button" id="play-button" type="button" aria-label="暫停動畫"><span id="play-icon">Ⅱ</span><span id="play-label">暫停</span></button>
+        <button class="reset-button" id="reset-button" type="button" aria-label="重設行星位置">↺ <span>重設</span></button>
+      </div>
+      <div class="speed-control"><label for="speed-range">公轉速度</label><input id="speed-range" type="range" min="0.25" max="3" value="1" step="0.25"><span id="speed-value">1×</span></div>
+      <p class="scale-note">軌道與行星大小為示意比例</p>
+    </footer>
+    <p class="credit">THE SOLAR SYSTEM <span>·</span> 在日常仰望星空</p>
+  </main>
+</body>
+</html>
